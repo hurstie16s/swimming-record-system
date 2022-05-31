@@ -11,12 +11,8 @@ public abstract class SqlCommandRunner {
     public static Connection databaseConnection;
     private static final Logger logger = LogManager.getLogger(SqlCommandRunner.class);
 
-    public static void initialiseSqlConnection() {
-        try {
-            databaseConnection = DriverManager.getConnection("jdbc:sqlite:identifier.sqlite");
-        } catch (SQLException e) {
-            logger.error("Could not connect to SQLite database");
-            System.exit(1);
-        }
+    public static void initialiseSqlConnection(String url) throws SQLException {
+        logger.info("Attempting to connect to Database " + url);
+        databaseConnection = DriverManager.getConnection(url);
     }
 }

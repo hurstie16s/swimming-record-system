@@ -1,0 +1,59 @@
+.appPane {
+    -fx-background-color: black;
+}
+.menu-background {
+    -fx-background-image: url("../images/background1.jpg");
+    -fx-background-size: cover;
+}
+.menuTitle {
+    -fx-fill: red;
+    -fx-font-family: 'Orbitron';
+    -fx-font-size: 64px;
+    -fx-font-weight: 800;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+.menuHeading {
+    -fx-fill: red;
+    -fx-font-family: 'Orbitron';
+    -fx-font-size: 32px;
+    -fx-font-weight: 800;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+.Button {
+    -fx-text-fill: red;
+    -fx-font-family: 'Orbitron';
+    -fx-font-size: 32px;
+    -fx-font-weight: 900;
+    -fx-stroke: black;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.Button:hover {
+    -fx-text-fill: aqua;
+}
+
+.Button:armed {
+    -fx-translate-y: -4;
+    -fx-translate-y: 4;
+}
+.text-field {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+    -fx-border-color: red;
+    -fx-border-width: 3px;
+    -fx-border-radius: 25px;
+}
+.text-field:focused {
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+}
+.menuOptions {
+    -fx-border-color: red;
+    -fx-border-width: 3px;
+    -fx-border-radius: 25px;
+}
