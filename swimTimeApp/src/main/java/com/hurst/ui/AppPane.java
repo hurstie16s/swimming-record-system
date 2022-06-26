@@ -7,6 +7,9 @@ import javafx.scene.transform.Translate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * The type App pane.
+ */
 public class AppPane extends StackPane {
 
     private static final Logger logger = LogManager.getLogger(AppPane.class);
@@ -16,6 +19,12 @@ public class AppPane extends StackPane {
     private final boolean autoScale = true;
     private double scalar = 1;
 
+    /**
+     * Instantiates a new App pane.
+     *
+     * @param width  the width
+     * @param height the height
+     */
     public AppPane(int width, int height) {
         super();
         this.width = width;
@@ -24,6 +33,11 @@ public class AppPane extends StackPane {
         setAlignment(Pos.TOP_LEFT);
     }
 
+    /**
+     * Sets scalar.
+     *
+     * @param Scalar the scalar
+     */
     protected void setScalar(double Scalar) {
         this.scalar = scalar;
     }

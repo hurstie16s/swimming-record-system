@@ -5,21 +5,50 @@ import com.hurst.ui.AppWindow;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 
+/**
+ * The type Base scene.
+ */
 public abstract class BaseScene {
 
+    /**
+     * The App window.
+     */
     protected final AppWindow appWindow;
 
+    /**
+     * The Root.
+     */
     protected AppPane root;
 
+    /**
+     * The Scene.
+     */
     protected Scene scene;
 
+    /**
+     * Instantiates a new Base scene.
+     *
+     * @param appWindow the app window
+     */
     public BaseScene(AppWindow appWindow) {
         this.appWindow = appWindow;
     }
 
+    /**
+     * Initialise.
+     */
     public abstract void initialise();
+
+    /**
+     * Build.
+     */
     public abstract void build();
 
+    /**
+     * Sets scene.
+     *
+     * @return the scene
+     */
     public Scene setScene() {
         var previous = appWindow.getScene();
         Scene scene = new Scene(root, previous.getWidth(), previous.getHeight(), Color.BLACK);
@@ -28,6 +57,11 @@ public abstract class BaseScene {
         return scene;
     }
 
+    /**
+     * Gets scene.
+     *
+     * @return the scene
+     */
     public Scene getScene() {
         return this.scene;
     }

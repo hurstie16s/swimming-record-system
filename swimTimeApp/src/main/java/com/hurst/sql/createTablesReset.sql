@@ -14,20 +14,17 @@ CREATE TABLE DateInfo
 
 CREATE TABLE RaceEventInfo
 (
-    raceEventId INTEGER AUTOINCREMENT,
     stroke TEXT,
     distance INTEGER,
-    PRIMARY KEY (raceEventId)
+    PRIMARY KEY (stroke, distance)
 );
-
 CREATE TABLE MeetInfo
 (
-    meetId INTEGER AUTOINCREMENT,
-    dateRep TEXT,
     meet TEXT,
+    dateRep TEXT,
     location TEXT,
     longCourse INTEGER,
-    PRIMARY KEY (meetId),
+    PRIMARY KEY (meet),
     FOREIGN KEY (dateRep) REFERENCES DateInfo(dateRep)
 );
 
@@ -42,11 +39,13 @@ CREATE TABLE NameInfo
 CREATE TABLE RaceInfo
 (
     username TEXT,
-    meetId INTEGER,
-    raceEventId INTEGER,
+    meet INTEGER,
+    stroke TEXT,
+    distance INTEGER,
     raceTime REAL,
-    PRIMARY KEY (username, meetId, raceEventId),
+    PRIMARY KEY (username, meet, stroke, distance),
     FOREIGN KEY (username) REFERENCES NameInfo(username),
-    FOREIGN KEY (meetId) REFERENCES MeetInfo(meetId),
-    FOREIGN KEY (raceEventId) REFERENCES RaceEventInfo(raceEventId)
+    FOREIGN KEY (meet) REFERENCES MeetInfo(meet),
+    FOREIGN KEY (stroke) REFERENCES RaceEventInfo(stroke),
+    FOREIGN KEY (distance) REFERENCES RaceEventInfo(distance)
 );

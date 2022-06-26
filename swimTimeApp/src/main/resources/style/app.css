@@ -5,6 +5,10 @@
     -fx-background-image: url("../images/background1.jpg");
     -fx-background-size: cover;
 }
+.app-background {
+    -fx-background-image: url("../images/background2.jpg");
+    -fx-background-size: cover;
+}
 .menuTitle {
     -fx-fill: red;
     -fx-font-family: 'Orbitron';
@@ -23,15 +27,25 @@
     -fx-stroke: black;
     -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
 }
+.menuWarning {
+    -fx-fill: red;
+    -fx-font-family: 'Orbitron';
+    -fx-font-size: 20px;
+    -fx-font-weight: 800;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
 .Button {
-    -fx-text-fill: red;
+    -fx-text-fill: white;
     -fx-font-family: 'Orbitron';
     -fx-font-size: 32px;
     -fx-font-weight: 900;
     -fx-stroke: black;
     -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
-    -fx-background-color: transparent;
+    -fx-background-color: red;
     -fx-cursor: hand;
+    -fx-border-radius: 100;
 }
 
 .Button:hover {
@@ -48,6 +62,7 @@
     -fx-border-color: red;
     -fx-border-width: 3px;
     -fx-border-radius: 25px;
+    -fx-text-inner-color: black;
 }
 .text-field:focused {
     -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;

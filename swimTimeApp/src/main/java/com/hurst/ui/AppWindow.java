@@ -3,6 +3,7 @@ package com.hurst.ui;
 import com.hurst.App;
 import com.hurst.scene.BaseScene;
 import com.hurst.scene.MenuScene;
+import com.hurst.sql.SqlCommandRunner;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -12,6 +13,13 @@ import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+/**
+ * The type App window.
+ */
 public class AppWindow {
 
     private static final Logger logger = LogManager.getLogger(AppWindow.class);
@@ -22,6 +30,13 @@ public class AppWindow {
     private BaseScene currentScene;
     private Scene scene;
 
+    /**
+     * Instantiates a new App window.
+     *
+     * @param stage  the stage
+     * @param width  the width
+     * @param height the height
+     */
     public AppWindow(Stage stage, int width, int height) {
         this.width = width;
         this.height = height;
@@ -37,14 +52,29 @@ public class AppWindow {
         startMenu();
     }
 
+    /**
+     * Gets scene.
+     *
+     * @return the scene
+     */
     public Scene getScene() {
         return scene;
     }
 
+    /**
+     * Gets width.
+     *
+     * @return the width
+     */
     public int getWidth() {
         return width;
     }
 
+    /**
+     * Gets height.
+     *
+     * @return the height
+     */
     public int getHeight() {
         return height;
     }
@@ -55,6 +85,9 @@ public class AppWindow {
         Font.loadFont(getClass().getResourceAsStream("/style/Orbitron-ExtraBold.ttf"), 32);
     }
 
+    /**
+     * Sets up stage.
+     */
     public void setUpStage() {
         stage.setTitle("Swim Record System");
         stage.setMinWidth(width);
@@ -62,6 +95,11 @@ public class AppWindow {
         stage.setOnCloseRequest(event -> App.getInstance().shutdown());
     }
 
+    /**
+     * Load scene.
+     *
+     * @param newScene the new scene
+     */
     public void loadScene(BaseScene newScene) {
 
         // Create and set up new scene
@@ -74,11 +112,17 @@ public class AppWindow {
         Platform.runLater(() -> currentScene.initialise());
     }
 
+    /**
+     * Sets up default scene.
+     */
     public void setUpDefaultScene() {
         this.scene = new Scene(new Pane(), width, height, Color.BLACK);
         stage.setScene(this.scene);
     }
 
+    /**
+     * Start menu.
+     */
     public void startMenu() {
         loadScene(new MenuScene(this));
     }

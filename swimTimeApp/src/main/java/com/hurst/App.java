@@ -3,6 +3,8 @@ package com.hurst;
 import com.hurst.sql.SqlCommandRunner;
 import com.hurst.ui.AppWindow;
 import javafx.application.Application;
+import javafx.geometry.Rectangle2D;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,21 +12,32 @@ import org.apache.logging.log4j.Logger;
 import java.sql.SQLException;
 
 /**
- * JavaFX App
+ * The type App.
  */
 public class App extends Application {
 
     private static final Logger logger = LogManager.getLogger(App.class);
     private static App instance;
-    private final int width = 1600;
-    private final int height = 1200;
+    private final Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+    private final int width = (int) screenBounds.getWidth() - 10;
+    private final int height = (int) (screenBounds.getWidth() * 0.5);
     private Stage stage;
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         logger.info("starting Application");
         launch();
     }
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static App getInstance() {
         return instance;
     }
@@ -45,6 +58,9 @@ public class App extends Application {
         openApp();
     }
 
+    /**
+     * Open app.
+     */
     public void openApp() {
         logger.info("Opening App Window");
 
@@ -53,6 +69,9 @@ public class App extends Application {
         stage.show();
     }
 
+    /**
+     * Shutdown.
+     */
     public void shutdown() {
         logger.info("Shutting Down");
         System.exit(0);
