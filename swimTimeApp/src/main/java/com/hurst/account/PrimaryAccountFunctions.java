@@ -11,7 +11,7 @@ import java.sql.SQLException;
 /**
  * The type Primary account functions.
  */
-public class PrimaryAccountFunctions {
+public abstract class PrimaryAccountFunctions {
 
     private static final Logger logger = LogManager.getLogger(PrimaryAccountFunctions.class);
 

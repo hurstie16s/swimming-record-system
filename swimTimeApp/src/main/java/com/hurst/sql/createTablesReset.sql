@@ -39,7 +39,7 @@ CREATE TABLE NameInfo
 CREATE TABLE RaceInfo
 (
     username TEXT,
-    meet INTEGER,
+    meet TEXT,
     stroke TEXT,
     distance INTEGER,
     raceTime REAL,

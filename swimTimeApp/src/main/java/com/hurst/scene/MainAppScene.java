@@ -37,10 +37,8 @@ public class MainAppScene extends BaseScene {
 
         root = new AppPane(appWindow.getWidth(), appWindow.getHeight());
 
-        var mainAppPane = new StackPane();
-        mainAppPane.setMaxWidth(appWindow.getWidth());
-        mainAppPane.setMaxHeight(appWindow.getHeight());
-        mainAppPane.getStyleClass().add("app-background");
+        var mainAppPane = rootSetUp("app-background");
         root.getChildren().add(mainAppPane);
     }
+
 }

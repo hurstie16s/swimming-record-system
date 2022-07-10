@@ -3,6 +3,7 @@ package com.hurst.scene;
 import com.hurst.ui.AppPane;
 import com.hurst.ui.AppWindow;
 import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
 /**
@@ -64,5 +65,14 @@ public abstract class BaseScene {
      */
     public Scene getScene() {
         return this.scene;
+    }
+
+    public StackPane rootSetUp(String cssURL) {
+
+        var pane = new StackPane();
+        pane.setMaxWidth(appWindow.getWidth());
+        pane.setMaxHeight(appWindow.getHeight());
+        pane.getStyleClass().add(cssURL);
+        return pane;
     }
 }

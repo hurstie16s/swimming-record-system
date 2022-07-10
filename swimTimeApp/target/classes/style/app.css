@@ -5,6 +5,10 @@
     -fx-background-image: url("../images/background1.jpg");
     -fx-background-size: cover;
 }
+.app-background {
+    -fx-background-image: url("../images/background2.jpg");
+    -fx-background-size: cover;
+}
 .menuTitle {
     -fx-fill: red;
     -fx-font-family: 'Orbitron';
